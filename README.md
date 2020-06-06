@@ -11,8 +11,40 @@ Notes：
 
 https://www.dusaiphoto.com/article/detail/2/
 
+* 进度
 
+### day1： 搭建开发环境(git 目录  my_blog project目录   app 目录)
 
-进度：
+```python
+# 创建project 
+>django-admin startproject my_blog
+# 查看效果
+>cd my_blog 
+>python manage.py runserver
 
-第一天：创建git目录，my_blog project目录
+# 创建APP
+>python manage.py startapp article
+
+# 注册APP（settings）
+my_blog/settings.py
+INSTALLED_APPS = [
+    ...,
+    'article',
+]
+
+# 配置访问路径（urls）
+my_blog/urls.py
+urlpatterns = [
+    ...,
+    path('article/', include('article.urls', namespace='article')),
+]
+
+article/urls.py (新建一个urls.py)
+from django.urls import path
+app_name = 'article'
+urlpatterns = [
+    # 后续views中的函数url
+]
+
+```
+

@@ -94,3 +94,24 @@ base.html list.html ....
 Django views are a key component of applications built with the framework. At their simplest they are a Python function or class that takes a web request and return a web response. Views are used to do things like fetch objects from the database, modify those objects if needed, render forms, return HTML, and much more.
 
 
+### day3： Form表单使用，发表文章、删除文章、修改文章
+
+```python
+article/forms.py
+class ArticlePostForm(forms.ModelForm):
+    ...
+    
+article/views.py 
+def article_create(request):
+    ...
+    
+templates/article/create.html 写模板
+
+# 删文章
+def article_delete(request, id):
+    ...
+    
+def article_update(request, id):
+    ...
+```
+
